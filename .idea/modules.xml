@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/crud-state-no-db.iml" filepath="$PROJECT_DIR$/.idea/crud-state-no-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/crud-nextjs-fastapi-sqlserver.iml" filepath="$PROJECT_DIR$/.idea/crud-nextjs-fastapi-sqlserver.iml" />
     </modules>
   </component>
 </project>
