@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="868098a0-ae77-4627-98fb-60daa26563c0" name="Changes" comment="" />
+    <list default="true" id="868098a0-ae77-4627-98fb-60daa26563c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +28,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;Z:/YoProgramo/Aprendiendo_front_react_TS_nextjs_tailwind/react-projects/crud-nextjs-fastapi-sqlserver&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Z:/YoProgramo/Aprendiendo_front_react_TS_nextjs_tailwind/react-projects/tuti_sied&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -53,7 +56,9 @@
       <workItem from="1726250486028" duration="11230000" />
       <workItem from="1726489896201" duration="4206000" />
       <workItem from="1726543154194" duration="30000" />
-      <workItem from="1726553298719" duration="3195000" />
+      <workItem from="1726553298719" duration="3543000" />
+      <workItem from="1726576355433" duration="1871000" />
+      <workItem from="1726586885351" duration="627000" />
     </task>
     <servers />
   </component>
