@@ -1,22 +1,29 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useAutoState } from "@/lib/store";
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function AutoPage() {
+    // Hooks deben ser llamados en el mismo orden
+    const { user, error, isLoading } = useUser();
     const autos = useAutoState((state) => state.autos);
     const fetchAutos = useAutoState((state) => state.fetchAutos);
     const addAuto = useAutoState((state) => state.addAuto);
     const editAuto = useAutoState((state) => state.editAuto);
     const deleteAuto = useAutoState((state) => state.deleteAuto);
 
-    // Estado local para almacenar la nueva marca al editar
+    // local state
     const [editInput, setEditInput] = useState("");
     const [autoToEdit, setAutoToEdit] = useState<number | null>(null);
 
-    // Obtener los autos al cargar la página
+    // fetch autos update
     useEffect(() => {
         fetchAutos();
     }, [fetchAutos]);
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
+    if (!user) return <div>Please log in</div>;
 
     return (
         <div className="max-w-xl mx-auto p-6">

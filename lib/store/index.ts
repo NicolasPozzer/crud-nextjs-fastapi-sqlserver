@@ -2,7 +2,7 @@ import { Auto } from "@/lib/types";
 import { create } from "zustand";
 import axios from "axios";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL_BACK;
 
 interface AutoState {
     autos: Auto[];
