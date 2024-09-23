@@ -12,7 +12,7 @@ export default function AdminPanel() {
     useEffect(() => {
         if (user) {
 
-            const roles = (user)['https:/myapp.com/roles']; // namespace
+            const roles = (user)['https://myapp.com/roles']; // namespace
             if (Array.isArray(roles) && roles.includes('admin')) {
                 setIsAdmin(true);
             }

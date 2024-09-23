@@ -6,27 +6,36 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL_BACK;
 
 interface AutoState {
     autos: Auto[];
-    fetchAutos: () => void;
-    addAuto: (marca: string) => Promise<void>;
-    editAuto: (id: number, marca: string) => Promise<void>;
-    deleteAuto: (id: number) => Promise<void>;
+    fetchAutos: (token: string) => Promise<void>;
+    addAuto: (marca: string, token: string) => Promise<void>;
+    editAuto: (id: number, marca: string, token: string) => Promise<void>;
+    deleteAuto: (id: number, token: string) => Promise<void>;
 }
 
 export const useAutoState = create<AutoState>((set) => ({
     autos: [],
 
-    fetchAutos: async () => {
+    fetchAutos: async (token) => {
         try {
-            const response = await axios.get(`${apiUrl}/autos`);
+            console.log(token)
+            const response = await axios.get(`${apiUrl}/autos`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
             set({ autos: response.data });
         } catch (error) {
             console.error("Error fetching autos", error);
         }
     },
 
-    addAuto: async (marca) => {
+    addAuto: async (marca, token) => {
         try {
-            const response = await axios.post(`${apiUrl}/autos/create`, { marca });
+            const response = await axios.post(`${apiUrl}/autos/create`, { marca }, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
             set((state) => ({
                 autos: [...state.autos, response.data],
             }));
@@ -35,9 +44,14 @@ export const useAutoState = create<AutoState>((set) => ({
         }
     },
 
-    editAuto: async (id, marca) => {
+    editAuto: async (id, marca, token) => {
         try {
-            const response = await axios.put(`${apiUrl}/autos/edit/${id}`, { marca });
+            console.log(token)
+            const response = await axios.put(`${apiUrl}/autos/edit/${id}`, { marca }, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
             set((state) => ({
                 autos: state.autos.map((auto) =>
                     auto.id === id ? { ...auto, marca: response.data.marca } : auto
@@ -48,9 +62,13 @@ export const useAutoState = create<AutoState>((set) => ({
         }
     },
 
-    deleteAuto: async (id) => {
+    deleteAuto: async (id, token) => {
         try {
-            await axios.delete(`${apiUrl}/autos/${id}`);
+            await axios.delete(`${apiUrl}/autos/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
             set((state) => ({
                 autos: state.autos.filter((auto) => auto.id !== id),
             }));
